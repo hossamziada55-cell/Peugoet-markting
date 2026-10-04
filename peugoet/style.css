@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: #fff;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.logo {
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.05);
+    object-fit: contain;
+    z-index: 1;
+    background: black;
+    animation: zoom 30s linear infinite;
+}
+
+/* Zoom Cinematic */
+@keyframes zoom {
+    0% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    bottom: 0;
+    opacity: 0;
+    animation: fadeIn 3s forwards 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: .9;
+    margin-bottom: 30px;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #00bcd4, #06b6d4, #00bcd4);
+    background-size: 200% 200%;
+    animation: shine 3s linear infinite, fadeBtn 2s forwards 2s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeBtn {
+    to {
+        opacity: 1;
+    }
+}
+
+.explore-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Scroll effect للوجو */
+.shrink .logo {
+    height: 40px;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .explore-btn {
+        padding: 12px 35px;
+        font-size: 16px;
+    }
+}
