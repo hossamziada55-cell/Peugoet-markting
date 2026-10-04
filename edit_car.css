@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.form-container{
+    width:90%;
+    max-width:800px;
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,215,0,0.2);
+}
+
+.form-container h2{
+    text-align:center;
+    color:#ffd700;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-grid input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#2a2a2a;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+
+.form-grid input:focus{
+    border:1px solid #ffd700;
+    box-shadow:0 0 10px #ffd700;
+}
+
+.full{
+    grid-column:1 / -1;
+}
+
+/* زرار التحديث */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#ffd700;
+    color:black;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #ffd700;
+}
+
+/* موبايل */
+@media(max-width:600px){
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+}

@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background: #0f3d3e;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: #082b2c;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00d9ff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px;
+    transition: 0.4s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: #082b2c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.4s;
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.car-hero {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 100px;
+}
+
+.car-hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.car-hero p {
+    font-size: 18px;
+    color: #00d9ff;
+    margin-bottom: 20px;
+}
+
+.car-hero img {
+    width: 300px;
+    border-radius: 15px;
+}
+
+.car-details {
+    padding: 40px;
+    background: #114e50;
+    border-radius: 20px;
+    margin: 40px;
+}
+
+.car-details h2 {
+    margin-bottom: 15px;
+}
+
+.car-details ul {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.car-details li {
+    margin-bottom: 8px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #00d9ff;
+    color: #000;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #fff;
+}
+
+.models-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.car-card {
+    background: #082b2c;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: #00d9ff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.more-btn:hover {
+    background: #fff;
+}
+
+@media(max-width:768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .car-hero img {
+        width: 80%;
+    }
+
+    .car-card {
+        width: 90%;
+    }
+}

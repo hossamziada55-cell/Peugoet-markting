@@ -1,0 +1,288 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: #0f3d3e;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  transition: 0.4s;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: #082b2c;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d9ff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background: #082b2c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.about-hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #00d9ff;
+}
+
+/* CONTENT */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.about-box {
+  background: #114e50;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+.about-box h2 {
+  margin-bottom: 10px;
+}
+
+.about-box p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #082b2c;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .about-box {
+    width: 90%;
+  }
+}
+
+/* User Profile Dropdown */
+.nav-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-login {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-add-car {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-add-car:hover {
+  background: #0056b3;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.btn-dashboard {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-dashboard:hover {
+  background: #0056b3;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.btn-logout {
+  background: #dc3545;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #c82333;
+}
+
+.user-profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.nav-profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 160px;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.user-profile-dropdown:hover .dropdown-menu,
+.user-profile-dropdown.active .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+  background: #252525;
+  color: #007bff;
+}
+
+.dropdown-menu a i {
+  margin-left: 10px;
+  width: 20px;
+}
+
+.dropdown-user-name {
+  padding: 10px 20px;
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
